@@ -464,7 +464,10 @@ footer{ padding:48px 0 72px; }
   font-family:'Josefin Sans', sans-serif;
   font-weight:600;
   font-size:1.1rem;
+  color:var(--ink);
+  text-decoration:none;
 }
+.connect-line .site:hover, .connect-line .site:focus-visible{ color:var(--magenta); }
 .connect-line .site .dot{ color:var(--magenta); }
 .connect-line .meta{ color:var(--ink-soft); font-size:0.86rem; }
 
