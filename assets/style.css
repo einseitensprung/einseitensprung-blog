@@ -112,7 +112,21 @@ h1,h2,h3,.display{
   color:var(--ink);
   white-space:nowrap;
 }
-.wordmark a{ color:inherit; text-decoration:none; }
+.wordmark a{
+  color:inherit;
+  text-decoration:none;
+  display:inline-block;
+}
+.wordmark a:hover, .wordmark a:focus-visible{
+  animation:wordmark-glitch 0.5s steps(2, end) infinite;
+}
+@keyframes wordmark-glitch{
+  0%, 100%{ text-shadow:none; transform:translate(0,0); }
+  20%{ text-shadow:-2px 0 var(--magenta), 2px 0 var(--cyan); transform:translate(-1px,0); }
+  40%{ text-shadow:2px 0 var(--magenta), -2px 0 var(--cyan); transform:translate(1px,0); }
+  60%{ text-shadow:-1px 0 var(--magenta), 1px 0 var(--cyan); transform:translate(0,0); }
+  80%{ text-shadow:none; transform:translate(1px,0); }
+}
 .wordmark .dot{
   display:inline-block;
   color:var(--magenta);
@@ -258,6 +272,7 @@ h1,h2,h3,.display{
 @media (prefers-reduced-motion: reduce){
   .cursor{ animation:none; opacity:.75; }
   .wordmark .dot{ animation:none; }
+  .wordmark a:hover, .wordmark a:focus-visible{ animation:none; color:var(--magenta); }
   .fab-icon, .fab-icon::before, .fab-icon::after, .fab-menu, .fab-menu a{ transition:none; }
   .search-input, .search-toggle{ transition:none; }
 }
