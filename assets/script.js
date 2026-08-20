@@ -29,3 +29,31 @@
     if(idx < nums.length - 1){ setActive(nums[idx + 1]); }
   });
 })();
+
+(function(){
+  var fab = document.getElementById('fab');
+  if(!fab) return;
+  var toggle = fab.querySelector('.fab-toggle');
+
+  function close(){
+    fab.classList.remove('is-open');
+    toggle.setAttribute('aria-expanded', 'false');
+  }
+  function open(){
+    fab.classList.add('is-open');
+    toggle.setAttribute('aria-expanded', 'true');
+  }
+
+  toggle.addEventListener('click', function(){
+    if(fab.classList.contains('is-open')){ close(); } else { open(); }
+  });
+  document.addEventListener('click', function(e){
+    if(!fab.contains(e.target)){ close(); }
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){ close(); }
+  });
+  fab.querySelectorAll('.fab-menu a').forEach(function(a){
+    a.addEventListener('click', close);
+  });
+})();
