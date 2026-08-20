@@ -287,6 +287,52 @@
   }
   .tag::before{ content:"#"; color:var(--ink-soft); }
 
+  /* ---------- Pagination ---------- */
+
+  .pagination{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:44px;
+  }
+  .page-numbers{ display:flex; flex-wrap:wrap; gap:6px; }
+  .page-btn{
+    font-family:'Inconsolata', monospace;
+    font-size:0.85rem;
+    color:var(--ink);
+    background:transparent;
+    border:1px solid var(--rule);
+    border-radius:8px;
+    padding:8px 13px;
+    cursor:pointer;
+    transition:border-color .15s, color .15s, background .15s, transform .15s;
+  }
+  .page-btn:hover:not(:disabled):not(.is-active){
+    border-color:var(--magenta);
+    color:var(--magenta);
+    background:var(--paper-raised);
+    transform:translateY(-1px);
+  }
+  .page-btn:active:not(:disabled):not(.is-active){ transform:translateY(0); }
+  .page-num{ min-width:40px; text-align:center; }
+  .page-btn.is-active{
+    background:var(--magenta);
+    border-color:var(--magenta);
+    color:var(--paper);
+    font-weight:700;
+    cursor:default;
+  }
+  .page-btn:disabled{ opacity:.35; cursor:not-allowed; }
+  .pagination-note{
+    width:100%;
+    text-align:center;
+    margin-top:14px;
+    font-size:0.76rem;
+    color:var(--ink-soft);
+  }
+
   /* ---------- About ---------- */
 
   .about{
@@ -582,6 +628,21 @@
       </div>
 
     </div>
+
+    <nav class="pagination" aria-label="Journal-Seiten (Demo)">
+      <button type="button" class="page-btn page-prev" disabled>&larr; Zurück</button>
+      <div class="page-numbers">
+        <button type="button" class="page-btn page-num is-active" aria-current="page">1</button>
+        <button type="button" class="page-btn page-num">2</button>
+        <button type="button" class="page-btn page-num">3</button>
+        <button type="button" class="page-btn page-num">4</button>
+        <button type="button" class="page-btn page-num">5</button>
+        <button type="button" class="page-btn page-num">6</button>
+        <button type="button" class="page-btn page-num">7</button>
+      </div>
+      <button type="button" class="page-btn page-next">Weiter &rarr;</button>
+    </nav>
+    <p class="pagination-note">Demo &mdash; zeigt nur den Seitenwechsel, es werden keine weiteren Einträge nachgeladen.</p>
   </section>
 
   <section aria-labelledby="whoami-label">
@@ -627,5 +688,39 @@
   </footer>
 
 </div>
+
+<script>
+  (function(){
+    var pagination = document.querySelector('.pagination');
+    if(!pagination) return;
+    var prev = pagination.querySelector('.page-prev');
+    var next = pagination.querySelector('.page-next');
+    var nums = Array.prototype.slice.call(pagination.querySelectorAll('.page-num'));
+
+    function setActive(target){
+      nums.forEach(function(btn){
+        var active = btn === target;
+        btn.classList.toggle('is-active', active);
+        if(active){ btn.setAttribute('aria-current', 'page'); }
+        else{ btn.removeAttribute('aria-current'); }
+      });
+      var idx = nums.indexOf(target);
+      prev.disabled = idx === 0;
+      next.disabled = idx === nums.length - 1;
+    }
+
+    nums.forEach(function(btn){
+      btn.addEventListener('click', function(){ setActive(btn); });
+    });
+    prev.addEventListener('click', function(){
+      var idx = nums.findIndex(function(b){ return b.classList.contains('is-active'); });
+      if(idx > 0){ setActive(nums[idx - 1]); }
+    });
+    next.addEventListener('click', function(){
+      var idx = nums.findIndex(function(b){ return b.classList.contains('is-active'); });
+      if(idx < nums.length - 1){ setActive(nums[idx + 1]); }
+    });
+  })();
+</script>
 </body>
 </html>
