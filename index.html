@@ -98,15 +98,60 @@
   }
   .wordmark .dot{ color:var(--magenta); }
 
+  .hero-body{
+    display:flex;
+    flex-wrap:wrap;
+    gap:36px;
+    margin-top:22px;
+    align-items:flex-start;
+  }
+
+  .intro{ flex:1 1 260px; min-width:220px; }
+
   .tagline{
-    margin-top:18px;
+    margin-top:0;
     max-width:34ch;
     color:var(--ink-soft);
     font-size:1.02rem;
   }
 
+  .tagcloud{
+    flex:1 1 300px;
+    min-width:240px;
+    display:flex;
+    flex-wrap:wrap;
+    align-content:flex-start;
+    gap:7px 9px;
+    padding-top:2px;
+  }
+  .cloud-tag{
+    --tag-c:var(--plum);
+    text-decoration:none;
+    color:var(--ink);
+    border:1px solid var(--rule);
+    border-radius:999px;
+    padding:3px 10px;
+    line-height:1.4;
+    white-space:nowrap;
+  }
+  .cloud-tag:hover, .cloud-tag:focus-visible{
+    border-color:var(--tag-c);
+    color:var(--tag-c);
+    background:var(--paper-raised);
+  }
+  .cloud-tag.t1{ font-size:1.05rem; font-weight:700; }
+  .cloud-tag.t2{ font-size:0.94rem; font-weight:600; }
+  .cloud-tag.t3{ font-size:0.85rem; font-weight:500; }
+  .cloud-tag.t4{ font-size:0.76rem; font-weight:400; }
+  .cloud-tag.t5{ font-size:0.7rem; font-weight:400; opacity:.72; }
+  .cloud-tag.c-blue{ --tag-c:var(--blue); }
+  .cloud-tag.c-magenta{ --tag-c:var(--magenta); }
+  .cloud-tag.c-lime{ --tag-c:var(--lime); }
+  .cloud-tag.c-cyan{ --tag-c:var(--cyan); }
+  .cloud-tag.c-plum{ --tag-c:var(--plum); }
+
   .prompt{
-    margin-top:28px;
+    margin-top:20px;
     display:inline-flex;
     align-items:baseline;
     gap:10px;
@@ -336,9 +381,46 @@
 
   <header class="hero">
     <div class="wordmark">einseitensprung<span class="dot">.</span>at</div>
-    <p class="tagline">Ein Blog rund um den einseitensprung.at&nbsp;Orbit &amp; mehr &mdash; Code, Design, Barrierefreiheit, KI.</p>
-    <div class="prompt">
-      <span class="sym">$</span> lesen --thema=alles<span class="cursor" aria-hidden="true"></span>
+    <div class="hero-body">
+      <div class="intro">
+        <p class="tagline">Ein Blog rund um den einseitensprung.at&nbsp;Orbit &amp; mehr &mdash; Code, Design, Barrierefreiheit, KI.</p>
+        <div class="prompt">
+          <span class="sym">$</span> lesen --thema=alles<span class="cursor" aria-hidden="true"></span>
+        </div>
+      </div>
+      <nav class="tagcloud" aria-label="Themen">
+        <a class="cloud-tag t2 c-plum" href="https://einseitensprung.at/blog/search.asp?tag=AI" target="_blank" rel="noopener">#AI</a>
+        <a class="cloud-tag t5 c-blue" href="https://einseitensprung.at/blog/search.asp?tag=backup" target="_blank" rel="noopener">#backup</a>
+        <a class="cloud-tag t5 c-plum" href="https://einseitensprung.at/blog/search.asp?tag=betrug" target="_blank" rel="noopener">#betrug</a>
+        <a class="cloud-tag t5 c-blue" href="https://einseitensprung.at/blog/search.asp?tag=cad" target="_blank" rel="noopener">#cad</a>
+        <a class="cloud-tag t1 c-blue" href="https://einseitensprung.at/blog/search.asp?tag=coding" target="_blank" rel="noopener">#coding</a>
+        <a class="cloud-tag t2 c-magenta" href="https://einseitensprung.at/blog/search.asp?tag=concept" target="_blank" rel="noopener">#concept</a>
+        <a class="cloud-tag t5 c-cyan" href="https://einseitensprung.at/blog/search.asp?tag=cookies" target="_blank" rel="noopener">#cookies</a>
+        <a class="cloud-tag t2 c-magenta" href="https://einseitensprung.at/blog/search.asp?tag=design" target="_blank" rel="noopener">#design</a>
+        <a class="cloud-tag t2 c-blue" href="https://einseitensprung.at/blog/search.asp?tag=hardware" target="_blank" rel="noopener">#hardware</a>
+        <a class="cloud-tag t3 c-cyan" href="https://einseitensprung.at/blog/search.asp?tag=health" target="_blank" rel="noopener">#health</a>
+        <a class="cloud-tag t4 c-blue" href="https://einseitensprung.at/blog/search.asp?tag=hosting" target="_blank" rel="noopener">#hosting</a>
+        <a class="cloud-tag t5 c-blue" href="https://einseitensprung.at/blog/search.asp?tag=linux" target="_blank" rel="noopener">#linux</a>
+        <a class="cloud-tag t4 c-plum" href="https://einseitensprung.at/blog/search.asp?tag=malware" target="_blank" rel="noopener">#malware</a>
+        <a class="cloud-tag t5 c-magenta" href="https://einseitensprung.at/blog/search.asp?tag=newsletter" target="_blank" rel="noopener">#newsletter</a>
+        <a class="cloud-tag t3 c-lime" href="https://einseitensprung.at/blog/search.asp?tag=performance" target="_blank" rel="noopener">#performance</a>
+        <a class="cloud-tag t5 c-plum" href="https://einseitensprung.at/blog/search.asp?tag=phishing" target="_blank" rel="noopener">#phishing</a>
+        <a class="cloud-tag t3 c-magenta" href="https://einseitensprung.at/blog/search.asp?tag=promotion" target="_blank" rel="noopener">#promotion</a>
+        <a class="cloud-tag t2 c-lime" href="https://einseitensprung.at/blog/search.asp?tag=seo" target="_blank" rel="noopener">#seo</a>
+        <a class="cloud-tag t4 c-blue" href="https://einseitensprung.at/blog/search.asp?tag=setup" target="_blank" rel="noopener">#setup</a>
+        <a class="cloud-tag t5 c-blue" href="https://einseitensprung.at/blog/search.asp?tag=smarthome" target="_blank" rel="noopener">#smarthome</a>
+        <a class="cloud-tag t5 c-plum" href="https://einseitensprung.at/blog/search.asp?tag=smishing" target="_blank" rel="noopener">#smishing</a>
+        <a class="cloud-tag t4 c-blue" href="https://einseitensprung.at/blog/search.asp?tag=software" target="_blank" rel="noopener">#software</a>
+        <a class="cloud-tag t5 c-blue" href="https://einseitensprung.at/blog/search.asp?tag=storage" target="_blank" rel="noopener">#storage</a>
+        <a class="cloud-tag t4 c-lime" href="https://einseitensprung.at/blog/search.asp?tag=testing" target="_blank" rel="noopener">#testing</a>
+        <a class="cloud-tag t3 c-magenta" href="https://einseitensprung.at/blog/search.asp?tag=ui_ux" target="_blank" rel="noopener">#ui_ux</a>
+        <a class="cloud-tag t3 c-plum" href="https://einseitensprung.at/blog/search.asp?tag=video" target="_blank" rel="noopener">#video</a>
+        <a class="cloud-tag t4 c-blue" href="https://einseitensprung.at/blog/search.asp?tag=virtualisierung" target="_blank" rel="noopener">#virtualisierung</a>
+        <a class="cloud-tag t2 c-cyan" href="https://einseitensprung.at/blog/search.asp?tag=wcag" target="_blank" rel="noopener">#wcag</a>
+        <a class="cloud-tag t5 c-blue" href="https://einseitensprung.at/blog/search.asp?tag=woocommerce" target="_blank" rel="noopener">#woocommerce</a>
+        <a class="cloud-tag t3 c-blue" href="https://einseitensprung.at/blog/search.asp?tag=wordpress" target="_blank" rel="noopener">#wordpress</a>
+        <a class="cloud-tag t3 c-blue" href="https://einseitensprung.at/blog/search.asp?tag=workspace" target="_blank" rel="noopener">#workspace</a>
+      </nav>
     </div>
   </header>
 
