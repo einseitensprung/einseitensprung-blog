@@ -93,6 +93,9 @@ h1,h2,h3,.display{
   margin:0 auto;
   padding:0 24px;
 }
+@media (min-width:1024px){
+  .wrap{ max-width:1024px; }
+}
 
 /* ---------- Hero ---------- */
 
