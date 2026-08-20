@@ -14,12 +14,10 @@ Ein handgebauter Onepager, der den Look und die Themen von [einseitensprung.at/b
 ## Struktur
 
 ```
-index.html   – statische Version (Single-File, keine Build-Schritte) → für GitHub Pages
-index.asp    – Classic-ASP-Version, lädt Posts & Tag-Cloud aus einer Datenbank
-config.asp   – Datenbank-Verbindungsdaten (noch leer, siehe unten)
+index.html   – die komplette Seite (Single-File, keine Build-Schritte)
 ```
 
-## Lokal ansehen (statische Version)
+## Lokal ansehen
 
 ```bash
 # einfach im Browser öffnen
@@ -28,27 +26,6 @@ start index.html  # Windows
 ```
 
 Kein Build, kein Backend, keine Abhängigkeiten außer den Google-Fonts-Links.
-
-## Classic-ASP-Version (`index.asp`)
-
-Braucht einen echten Windows-/IIS-Server mit Classic ASP (Active Scripting) —
-**läuft nicht** über GitHub Pages, da dort kein serverseitiger Code
-ausgeführt wird. Die Live-Preview oben zeigt weiterhin `index.html`.
-
-Verbindungsdaten trägst du in `config.asp` ein (`connString`). Erwartetes
-Tabellenschema:
-
-| Tabelle    | Spalten                                              |
-|------------|-------------------------------------------------------|
-| `Posts`    | `Id`, `Title`, `Description`, `PostDate`, `Published`  |
-| `Tags`     | `Id`, `Name`                                           |
-| `PostTags` | `PostId`, `TagId` (Verknüpfungstabelle)                |
-
-`index.asp` lädt die letzten 10 veröffentlichten Posts samt Tags sowie eine
-nach Häufigkeit gewichtete Tag-Cloud direkt aus der Datenbank. Solange
-`connString` leer ist oder eine Abfrage fehlschlägt, greift automatisch ein
-eingebauter Fallback mit den aktuellen Beispieldaten — die Seite bleibt so
-immer funktionsfähig, auch ohne (funktionierende) DB-Verbindung.
 
 ## Hinweis
 
