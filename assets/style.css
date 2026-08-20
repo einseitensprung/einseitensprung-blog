@@ -709,6 +709,46 @@ section:last-of-type{ border-bottom:none; }
 }
 .prose p:last-child{ margin-bottom:0; }
 
+.post-nav{
+  display:flex;
+  justify-content:space-between;
+  gap:24px;
+  margin-top:56px;
+  padding-top:32px;
+  border-top:1px solid var(--rule);
+  flex-wrap:wrap;
+}
+.post-nav-link{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  max-width:320px;
+  text-decoration:none;
+  color:var(--ink);
+}
+.post-nav-next{
+  margin-left:auto;
+  text-align:right;
+  align-items:flex-end;
+}
+.post-nav-label{
+  font-size:0.78rem;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  color:var(--ink-soft);
+}
+.post-nav-title{
+  font-family:'Josefin Sans', sans-serif;
+  font-weight:600;
+  font-size:1.05rem;
+  text-wrap:balance;
+}
+a.post-nav-link:hover .post-nav-title,
+a.post-nav-link:hover .post-nav-label,
+a.post-nav-link:focus-visible .post-nav-title,
+a.post-nav-link:focus-visible .post-nav-label{ color:var(--magenta); }
+.post-nav-disabled{ opacity:.4; cursor:default; }
+
 /* ---------- Footer ---------- */
 
 footer{ padding:48px 0 72px; }
