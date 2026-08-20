@@ -493,4 +493,8 @@ footer{ padding:48px 0 72px; }
   .rail{ grid-template-columns:64px 1fr; column-gap:21px; }
   .rail-date::after{ right:-14px; }
   .rail-line::before{ right:-11px; }
+
+  .glow::before, .glow::after{ width:220px; height:220px; filter:blur(45px); }
+  .glow::before{ top:-80px; left:-80px; }
+  .glow::after{ bottom:-80px; right:-80px; }
 }
