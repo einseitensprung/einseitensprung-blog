@@ -198,6 +198,8 @@ h1,h2,h3,.display{
 /* ---------- Section labels ---------- */
 
 .label{
+  font-family:'Inconsolata', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+  font-weight:400;
   font-size:0.8rem;
   letter-spacing:0.14em;
   text-transform:uppercase;
