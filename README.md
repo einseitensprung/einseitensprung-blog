@@ -2,7 +2,7 @@
 
 Ein handgebauter Onepager, der den Look und die Themen von [einseitensprung.at/blog](https://einseitensprung.at/blog/) auf eine einzige Seite destilliert: ein Journal-Feed der letzten Posts, eine `whoami`-Sektion und eine Siegel-Reihe mit den echten Qualitätsmerkmalen des Original-Blogs (WCAG AAA, DSGVO-konform, cookie-frei, handgefertigt).
 
-**🔗 Live-Preview:** https://einseitensprung.github.io/einseitensprung-onepager/
+**🔗 Live-Preview:** https://einseitensprung.github.io/einseitensprung-blog/
 
 ## Design
 
