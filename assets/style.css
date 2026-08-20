@@ -518,6 +518,54 @@ section:last-of-type{ border-bottom:none; }
   .side-links{ display:none; }
 }
 
+/* ---------- Blog-Start (nur Detailseite) ---------- */
+
+.blog-start{
+  position:fixed;
+  left:0;
+  top:50%;
+  transform:translateY(-50%);
+  z-index:5;
+}
+.blog-start a{
+  display:block;
+  writing-mode:vertical-rl;
+  text-orientation:mixed;
+  text-decoration:none;
+  font-size:0.78rem;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  color:var(--ink);
+  background:var(--paper-raised);
+  border:1px solid var(--rule);
+  border-left:none;
+  border-radius:0 8px 8px 0;
+  padding:14px 7px;
+  transition:background .15s, color .15s, padding-left .15s, border-color .15s;
+}
+.blog-start a:hover, .blog-start a:focus-visible{
+  color:var(--paper);
+  background:var(--magenta);
+  border-color:var(--magenta);
+  padding-left:11px;
+}
+@media (max-width:900px){
+  .blog-start{
+    left:18px;
+    top:auto;
+    bottom:18px;
+    transform:none;
+  }
+  .blog-start a{
+    writing-mode:horizontal-tb;
+    border:1px solid var(--rule);
+    border-radius:999px;
+    padding:12px 18px;
+    box-shadow:0 6px 14px var(--shadow);
+  }
+  .blog-start a:hover, .blog-start a:focus-visible{ padding-left:18px; }
+}
+
 /* ---------- Mobile FAB (Hauptseite / Newsletter) ---------- */
 
 .fab{
