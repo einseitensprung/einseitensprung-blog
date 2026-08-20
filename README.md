@@ -1,6 +1,6 @@
-# Einseitensprung Journal
+# Einseitensprung Blog
 
-Ein handgebauter Onepager, der den Look und die Themen von [einseitensprung.at/blog](https://einseitensprung.at/blog/) auf eine einzige Seite destilliert: ein Journal-Feed der letzten Posts, eine `whoami`-Sektion und eine Siegel-Reihe mit den echten Qualitätsmerkmalen des Original-Blogs (WCAG AAA, DSGVO-konform, cookie-frei, handgefertigt).
+Ein handgebauter Onepager, der den Look und die Themen von [einseitensprung.at/blog](https://einseitensprung.at/blog/) auf eine einzige Seite destilliert: ein Blog-Feed der letzten Posts, eine `whoami`-Sektion und eine Siegel-Reihe mit den echten Qualitätsmerkmalen des Original-Blogs (WCAG AAA, DSGVO-konform, cookie-frei, handgefertigt).
 
 **🔗 Live-Preview:** https://einseitensprung.github.io/einseitensprung-blog/
 
@@ -8,7 +8,7 @@ Ein handgebauter Onepager, der den Look und die Themen von [einseitensprung.at/b
 
 - **Farben** — das echte Marken-Plum/Magenta des Blogs (`#8e1963` / `#bc2184`), aus dem Original-Stylesheet extrahiert, plus die Tag-Akzentfarben als Kategorie-Coding
 - **Typografie** — Josefin Sans (Display) + Inconsolata (Fließtext), das originale Font-Pairing des Blogs, bewusst als durchgängiger Terminal-/Code-Look übernommen
-- **Struktur** — ein Journal-Feed im Git-Log-Stil: eine Datumsschiene mit farbcodierten Knoten statt generischer Nummerierung, dazu Tag-Chips pro Eintrag
+- **Struktur** — ein Blog-Feed im Git-Log-Stil: eine Datumsschiene mit farbcodierten Knoten statt generischer Nummerierung, dazu Tag-Chips pro Eintrag
 - **Barrierefreiheit** — sichtbare Fokus-States, `prefers-reduced-motion` respektiert, Light-/Dark-Mode über CSS-Tokens
 
 ## Struktur
