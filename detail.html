@@ -18,6 +18,10 @@
     <circle cx="8" cy="10" r="1.6" fill="currentColor"/>
     <path d="M4 17l5-5 3 3 4-5 4 5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
   </symbol>
+  <symbol id="icon-search" viewBox="0 0 24 24">
+    <circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+    <line x1="15.3" y1="15.3" x2="20.5" y2="20.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+  </symbol>
 </svg>
 <div class="glow" aria-hidden="true"></div>
 
@@ -39,7 +43,15 @@
 <div class="wrap">
 
   <header class="hero">
-    <h1 class="wordmark"><a href="index.html">einseitensprung<span class="dot">.</span>at/blog</a></h1>
+    <div class="hero-top">
+      <h1 class="wordmark"><a href="index.html">einseitensprung<span class="dot">.</span>at/blog</a></h1>
+      <div class="search" id="search">
+        <input type="text" id="search-input" class="search-input" placeholder="Suchen&hellip;" aria-label="Suchen" autocomplete="off">
+        <button type="button" class="search-toggle" aria-expanded="false" aria-controls="search-input" aria-label="Suche öffnen">
+          <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-search"></use></svg>
+        </button>
+      </div>
+    </div>
     <div class="hero-body">
       <div class="intro">
         <p class="tagline">Ein Blog rund um den einseitensprung.at&nbsp;Orbit &amp; mehr &mdash; Code, Design, Barrierefreiheit, KI.</p>

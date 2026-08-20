@@ -121,6 +121,64 @@ h1,h2,h3,.display{
   60%{ transform:translateY(-0.12em); }
 }
 
+.hero-top{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+}
+
+.search{
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  height:38px;
+}
+.search-input{
+  position:absolute;
+  right:0;
+  top:0;
+  height:38px;
+  width:0;
+  padding:0;
+  border:1px solid var(--rule);
+  border-radius:999px;
+  background:var(--paper-raised);
+  color:var(--ink);
+  font-family:'Inconsolata', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+  font-size:0.85rem;
+  opacity:0;
+  pointer-events:none;
+  transition:width .25s ease, opacity .18s ease, padding .25s ease;
+}
+.search-input::placeholder{ color:var(--ink-soft); }
+.search.is-open .search-input{
+  width:180px;
+  padding:0 44px 0 16px;
+  opacity:1;
+  pointer-events:auto;
+}
+.search-toggle{
+  position:relative;
+  z-index:1;
+  width:38px;
+  height:38px;
+  border-radius:50%;
+  border:1px solid var(--rule);
+  background:var(--paper-raised);
+  color:var(--ink);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  transition:border-color .15s, color .15s;
+}
+.search-toggle:hover, .search-toggle:focus-visible{ border-color:var(--magenta); color:var(--magenta); }
+.search.is-open .search-toggle{ border-color:var(--magenta); color:var(--magenta); }
+.search-icon{ width:16px; height:16px; }
+
 .hero-body{
   display:flex;
   flex-wrap:wrap;
@@ -198,6 +256,7 @@ h1,h2,h3,.display{
   .cursor{ animation:none; opacity:.75; }
   .wordmark .dot{ animation:none; }
   .fab-icon, .fab-icon::before, .fab-icon::after, .fab-menu, .fab-menu a{ transition:none; }
+  .search-input, .search-toggle{ transition:none; }
 }
 @keyframes blink{ 50%{ opacity:0; } }
 
@@ -638,4 +697,9 @@ footer{ padding:48px 0 72px; }
   .glow::before, .glow::after{ width:220px; height:220px; filter:blur(45px); }
   .glow::before{ top:-80px; left:-80px; }
   .glow::after{ bottom:-80px; right:-80px; }
+}
+
+@media (max-width:680px){
+  .hero-top{ flex-direction:column; align-items:flex-start; }
+  .search{ align-self:flex-end; }
 }
