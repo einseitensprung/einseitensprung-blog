@@ -14,8 +14,12 @@ Ein handgebauter Onepager, der den Look und die Themen von [einseitensprung.at/b
 ## Struktur
 
 ```
-index.html   – die komplette Seite (Single-File, keine Build-Schritte)
+index.html          – Markup
+assets/style.css     – Styles
+assets/script.js     – Pagination-Interaktion
 ```
+
+Keine Build-Schritte, keine Bundler — die Dateien werden direkt verlinkt.
 
 ## Lokal ansehen
 
