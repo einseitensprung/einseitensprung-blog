@@ -53,6 +53,26 @@
 
   *{ box-sizing:border-box; }
 
+  .glow{
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+    pointer-events:none;
+    z-index:0;
+  }
+  .glow::before, .glow::after{
+    content:"";
+    position:absolute;
+    width:600px;
+    height:600px;
+    border-radius:50%;
+    filter:blur(120px);
+  }
+  .glow::before{ top:-220px; left:-200px; background:var(--plum); opacity:.22; }
+  .glow::after{ bottom:-220px; right:-200px; background:var(--magenta); opacity:.16; }
+
+  .wrap{ position:relative; z-index:1; }
+
   body{
     margin:0;
     background:var(--paper);
@@ -376,6 +396,7 @@
 </style>
 </head>
 <body>
+<div class="glow" aria-hidden="true"></div>
 
 <div class="wrap">
 
