@@ -2,13 +2,13 @@
   --paper:#faf5f1;
   --paper-raised:#f2e8e2;
   --ink:#22111a;
-  --ink-soft:#6a5460;
+  --ink-soft:#58424e;
   --rule: rgba(34,17,26,0.15);
-  --plum:#8e1963;
-  --magenta:#bc2184;
-  --blue:#3f6fc4;
-  --lime:#5c7a2e;
-  --cyan:#1c8686;
+  --plum:#6b1550;
+  --magenta:#8a1339;
+  --blue:#1f3a73;
+  --lime:#2e4712;
+  --cyan:#0e4747;
 }
 
 @media (prefers-color-scheme: dark){
